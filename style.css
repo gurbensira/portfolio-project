@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20%;
+    height: 100px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+
+
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+
+}
+
+.nav-links li {
+    display: block;
+    width: 100px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+}
+
+.nav-links li a:hover {
+    border-bottom: 2px solid black;
+}
+
+.logo-link {
+    color: black;
+    text-decoration: none;
+}
+
+.logo-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
+    width: fit-content;
+
+    .logo-img {
+        border-radius: 50%;
+    }
+
+    .logo-text {
+        font-family: poppins;
+
+    }
+}
+
+#home {
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(45deg, rgb(0, 127, 139), lightblue, rgb(0, 174, 255));
+
+    h1,
+    p {
+        text-align: center;
+
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}
+
+.skills-icons {
+
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: fit-content;
+    align-items: center;
+
+    .skills-wrap {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+    }
+
+    .box {
+        width: 300px;
+        height: 5px;
+        /* background-color: rgb(0, 174, 255); */
+        background-color: black;
+
+        border-radius: 15px;
+    }
+
+    .icon-and-span-wrapper {
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        margin: 0 auto;
+    }
+}
+
+#about {
+    margin-top: 100px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+
+    img {
+        border-radius: 100%;
+        width: 200px;
+    }
+
+    h1 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+        font-size: 3em;
+    }
+
+    p {
+
+        display: block;
+        width: 400px;
+        text-align: justify;
+    }
+}
