@@ -131,6 +131,7 @@ header {
     height: fit-content;
     align-items: center;
 
+
     img {
         border-radius: 100%;
         width: 200px;
@@ -147,5 +148,21 @@ header {
         display: block;
         width: 400px;
         text-align: justify;
+    }
+
+    .cv-download {
+        margin-top: 30px;
+        background: rgb(0, 174, 255);
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        width: 150px;
+        border-radius: 15px;
+    }
+
+    .cv-download:hover {
+        background-color: lightskyblue;
+        transition: 0.5s;
     }
 }
