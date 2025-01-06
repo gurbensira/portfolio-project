@@ -300,6 +300,12 @@ section {
         cursor: pointer;
     }
 
+    input,
+    button,
+    textarea {
+        border-radius: 5px;
+    }
+
     .envelope {
         width: 500px;
     }
