@@ -318,3 +318,11 @@ section {
         color: black;
     }
 }
+
+footer {
+    width: 100vw;
+    height: fit-content;
+    text-align: center;
+    color: white;
+    background-color: #3A3A3A;
+}
