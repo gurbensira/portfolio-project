@@ -69,8 +69,11 @@ section {
     height: fit-content;
     width: fit-content;
 
+
     .logo-img {
         border-radius: 50%;
+        width: 75px;
+        height: 75px;
     }
 
     .logo-text {
@@ -139,8 +142,10 @@ section {
 
 
     img {
-        border-radius: 100%;
-        width: 200px;
+        border-radius: 50%;
+
+        width: 170px;
+        height: 170px;
     }
 
     h1 {
