@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Heebo;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background-color: #F9F9F9;
+
+}
+
+#main-container {
+    margin: 0 auto;
+    border: 1px solid white;
+    width: 1500px;
+    height: 850px;
+    box-shadow: 1px 1px 1px white;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+.form-container {
+    position: absolute;
+    background-color: #1A1A1AD4;
+    width: 450px;
+    height: 550px;
+    top: 130px;
+    right: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: fit-content;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1 {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mobile-br {
+    display: none;
+}
+
+p {
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+label {
+    color: #FFFFFF;
+}
+
+input[type=text],
+input[type=email] {
+    margin-bottom: 30px;
+    display: block;
+    height: 40px;
+    border: 1px solid #D31C75;
+}
+
+input[type=submit] {
+    display: block;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #D31C75;
+    border: none;
+    width: 125px;
+    height: 35px;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .desktop-img {
+        display: none;
+    }
+
+
+
+    #main-container {
+        background-image: url(images/Path\ mobile\ 15.png);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 80vh;
+        background-size: 100vw;
+        position: unset;
+        width: 100vw;
+        height: 100vh;
+        align-content: center;
+    }
+
+    .form-container {
+        position: unset;
+        margin: 0 auto;
+        width: 320px;
+        height: 500px;
+    }
+
+    .form-wrapper {
+        align-items: center;
+    }
+
+    .mobile-br {
+        display: unset;
+    }
+
+    form {
+        margin-top: 30px;
+    }
+
+
+    p {
+        text-align: center;
+
+    }
+
+    input[type=text],
+    input[type=email] {
+
+        height: 30px;
+        width: 250px;
+    }
+}
