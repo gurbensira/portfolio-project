@@ -131,7 +131,32 @@ input[type="button"]:hover {
     }
 
     input[type="button"] {
-        width: 350px;
+        width: 302px;
         color: #2823FD;
     }
+
+    input {
+        width: 302px;
+        height: 36px;
+    }
+
+}
+
+@media (max-width:350px) {
+
+    #main-container {
+        gap: unset;
+        height: 100%;
+    }
+
+    #main-container h1 {
+        font-size: 60px;
+    }
+
+    form {
+        gap: 5px;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
 }

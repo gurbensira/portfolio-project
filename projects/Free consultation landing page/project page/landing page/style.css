@@ -199,7 +199,8 @@ input[type=submit] {
 }
 
 
-@media (max-width:700px) {
+
+@media (max-width:900px) {
 
     body {
         position: unset;

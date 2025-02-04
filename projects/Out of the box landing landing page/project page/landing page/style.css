@@ -478,3 +478,16 @@ input[type=submit] {
     }
 
 }
+
+@media (max-width:350px) {
+    .serviceDetails {
+        background-color: #F8F8F8;
+        width: 310px;
+        height: 247px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

@@ -26,8 +26,6 @@ body {
 section {
     display: flex;
     flex-direction: column;
-
-
     width: 100%;
     height: 743px;
     background-repeat: no-repeat;
@@ -112,7 +110,7 @@ input[type=submit] {
     body {
         height: 100vh;
         width: 100vw;
-
+        background-image: unset;
     }
 
     section {
@@ -159,7 +157,14 @@ input[type=submit] {
         border-right: none;
         border-left: none;
         margin-bottom: 20px;
+    }
 
+    input[type=text] {
+        margin-left: unset;
+    }
+
+    input[type=email] {
+        margin-left: unset;
     }
 
     input[type=submit] {
