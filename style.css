@@ -269,7 +269,7 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: row;
     margin-top: 50px;
-    width: 100vw;
+    width: 100%;
     height: fit-content;
     background-color: #3A3A3A;
 
