@@ -175,7 +175,7 @@ input[type="checkbox"] {
 
         display: block;
         width: 400px;
-        /* text-align: justify; */
+        text-align: justify;
     }
 
     .cv-download {
