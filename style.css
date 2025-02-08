@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+    width: 100vw;
 }
 
 header {
@@ -95,12 +96,15 @@ input[type="checkbox"] {
 }
 
 #home {
+    background-image: url(images/portfolio-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(45deg, rgb(0, 127, 139), lightblue, rgb(0, 174, 255));
+    /* background: linear-gradient(45deg, rgb(0, 127, 139), lightblue, rgb(0, 174, 255)); */
 
     h1,
     p {
