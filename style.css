@@ -368,7 +368,10 @@ footer {
 
 @media (max-width: 1150px) {
 
-
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
     .logo-wrap {
         flex-direction: column;
@@ -384,6 +387,11 @@ footer {
 }
 
 @media (max-width: 700px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
     header {
         background-color: white;
