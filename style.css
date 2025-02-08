@@ -165,7 +165,7 @@ input[type="checkbox"] {
         height: 170px;
     }
 
-    h1 {
+    h2 {
         margin-top: 20px;
         margin-bottom: 10px;
         font-size: 3em;
@@ -238,10 +238,6 @@ input[type="checkbox"] {
             height: 100%;
         }
 
-        h1 {
-            text-align: center;
-        }
-
         h2 {
             text-align: center;
         }
@@ -283,11 +279,11 @@ input[type="checkbox"] {
 
     }
 
-    h1 {
+    h2 {
         padding-top: 50px;
     }
 
-    h1,
+    h2,
     p {
         padding-left: 20%;
         color: white;
@@ -518,11 +514,11 @@ footer {
 
         }
 
-        h1 {
+        h2 {
             padding-top: 50px;
         }
 
-        h1,
+        h2,
         p {
             padding-left: 20%;
             color: white;
