@@ -289,6 +289,10 @@ input[type="checkbox"] {
         color: white;
     }
 
+    p {
+        margin-bottom: 10px;
+    }
+
     form {
         margin-left: 20%;
         gap: 5px;
