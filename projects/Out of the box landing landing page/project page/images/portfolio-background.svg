@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400">
+  <!-- Base background -->
+  <rect width="100%" height="100%" fill="#007f8b"/>
+  
+  <!-- Abstract geometric pattern -->
+  <path d="M0 0 L1000 0 L1000 400 L0 400 Z" fill="url(#gradient)"/>
+  
+  <!-- Define gradients -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007f8b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#add8e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00aeff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Pattern definition -->
+    <pattern id="pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L30 30 L0 60 Z" fill="#ffffff10"/>
+      <path d="M60 0 L30 30 L60 60 Z" fill="#ffffff08"/>
+    </pattern>
+  </defs>
+  
+  <!-- Apply pattern overlay -->
+  <rect width="100%" height="100%" fill="url(#pattern)"/>
+  
+  <!-- Add some floating geometric shapes for depth -->
+  <circle cx="200" cy="100" r="40" fill="#ffffff05"/>
+  <circle cx="800" cy="300" r="60" fill="#ffffff05"/>
+  <path d="M600 150 L650 200 L550 200 Z" fill="#ffffff05"/>
+  <path d="M100 250 L150 300 L50 300 Z" fill="#ffffff05"/>
+</svg>

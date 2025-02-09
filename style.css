@@ -89,6 +89,7 @@ input[type="checkbox"] {
         border-radius: 50%;
         width: 75px;
         height: 75px;
+        border: 2px solid black;
     }
 
     .logo-text {
@@ -106,7 +107,7 @@ input[type="checkbox"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background: linear-gradient(45deg, rgb(0, 127, 139), lightblue, rgb(0, 174, 255)); */
+
 
     h1,
     p {

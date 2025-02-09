@@ -88,13 +88,16 @@ input[type="checkbox"] {
 }
 
 #home {
+    background-image: url(images/portfolio-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100vw;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, rgb(0, 127, 139), lightblue, rgb(0, 174, 255));
+
 
     h1,
     p {
