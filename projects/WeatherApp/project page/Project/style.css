@@ -113,7 +113,6 @@ body {
     display: none;
 }
 
-/* Loading spinner */
 .loading {
     width: 20px;
     height: 20px;
@@ -138,7 +137,6 @@ body {
     display: none;
 }
 
-/* Media Queries for additional responsiveness */
 @media (max-width: 400px) {
     .details {
         flex-direction: column;

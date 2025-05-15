@@ -31,7 +31,6 @@ function boxClicked(e) {
             return
         }
 
-        // Check for draw
         if (!spaces.includes(null)) {
             playerText.innerText = 'Game ended in draw!';
             gameActive = false;

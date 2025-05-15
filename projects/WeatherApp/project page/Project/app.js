@@ -10,14 +10,12 @@ async function checkWeather(city) {
         document.querySelector('.weather').style.display = 'none';
         document.querySelector('.error').style.display = 'none';
 
-        // Add loading state
         searchBtn.disabled = true;
         searchBtn.innerHTML = '<div class="loading"></div>';
 
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         const data = await response.json();
 
-        // Reset button
         searchBtn.disabled = false;
         searchBtn.innerHTML = '<img src="images/search.png" alt="Search">';
 
@@ -27,7 +25,6 @@ async function checkWeather(city) {
             return;
         }
 
-        // Update weather icon based on condition
         if (data.weather[0].main == 'Clouds') {
             weatherIcon.src = 'images/clouds.png';
         } else if (data.weather[0].main == 'Clear') {
@@ -39,10 +36,9 @@ async function checkWeather(city) {
         } else if (data.weather[0].main == 'Mist') {
             weatherIcon.src = 'images/mist.png';
         } else {
-            weatherIcon.src = 'images/clear.png'; // Default icon
+            weatherIcon.src = 'images/clear.png';
         }
 
-        // Update UI with weather data
         document.querySelector('.city').innerHTML = data.name;
         document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c';
         document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
@@ -55,13 +51,11 @@ async function checkWeather(city) {
         document.querySelector('.error').style.display = 'block';
         document.querySelector('.weather').style.display = 'none';
 
-        // Reset button on error
         searchBtn.disabled = false;
         searchBtn.innerHTML = '<img src="images/search.png" alt="Search">';
     }
 }
 
-// Event listener for search button click
 searchBtn.addEventListener('click', () => {
     const city = searchBox.value.trim();
     if (city) {
@@ -69,7 +63,6 @@ searchBtn.addEventListener('click', () => {
     }
 });
 
-// Event listener for Enter key press
 searchBox.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         const city = searchBox.value.trim();

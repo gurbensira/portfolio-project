@@ -10,12 +10,10 @@
 </head>
 
 <body>
-    <!-- Login/Register Page -->
     <div id="loginPage">
         <div class="auth-container">
             <h1>Image Gallery</h1>
 
-            <!-- Login Form -->
             <div id="loginForm">
                 <h2>Login</h2>
                 <div class="form-group">
@@ -31,7 +29,6 @@
                         here</button></p>
             </div>
 
-            <!-- Register Form -->
             <div id="registerForm">
                 <h2>Register</h2>
                 <div class="form-group">
@@ -49,15 +46,12 @@
         </div>
     </div>
 
-    <!-- Gallery Page -->
     <div id="galleryPage">
-        <!-- Header with welcome message and logout button -->
         <div class="header">
             <h2 id="welcomeMessage">Welcome!</h2>
             <button onclick="logout()" class="logout-button">Logout</button>
         </div>
 
-        <!-- Image Gallery (Your existing gallery) -->
         <div class="fullImg" id="fullImgBox">
             <img src="images/img1.jpg" alt="" id="fullImg">
             <span onclick="closeFullImg()">X</span>
@@ -75,9 +69,7 @@
         </div>
     </div>
 
-    <!-- Include your original JS -->
     <script src="app.js"></script>
-    <!-- Include the authentication JS -->
     <script src="auth.js"></script>
 </body>
 

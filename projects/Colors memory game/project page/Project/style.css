@@ -34,7 +34,6 @@ body {
     transform: scale(0.97);
 }
 
-/* Media queries for different screen sizes */
 @media (min-width: 576px) {
     .tiles {
         grid-template-columns: repeat(4, 1fr);

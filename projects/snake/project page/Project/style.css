@@ -154,7 +154,6 @@ body {
     color: #f44336;
 }
 
-/* Media query for smaller devices */
 @media (max-width: 768px) {
     #scoreText {
         font-size: 8vw;
@@ -178,7 +177,6 @@ body {
         font-size: 1.3rem;
     }
 
-    /* Make control buttons larger on small screens */
     .control-btn {
         width: 70px;
         height: 70px;
@@ -186,7 +184,6 @@ body {
     }
 }
 
-/* Media query for very small devices */
 @media (max-width: 480px) {
     #scoreText {
         font-size: 10vw;
@@ -206,7 +203,6 @@ body {
         font-size: 1.2rem;
     }
 
-    /* Adjust control buttons for very small screens */
     #controlsContainer {
         gap: 8px;
     }

@@ -18,7 +18,7 @@ let yVelocety = 0;
 let foodX;
 let foodY;
 let score = 0;
-let gameSpeed = 75; // Default speed (medium)
+let gameSpeed = 75;
 let snake = [
     { x: unitSize * 4, y: 0 },
     { x: unitSize * 3, y: 0 },
@@ -27,7 +27,6 @@ let snake = [
     { x: 0, y: 0 }
 ];
 
-// Add touch controls event listeners
 const upBtn = document.querySelector("#upBtn");
 const leftBtn = document.querySelector("#leftBtn");
 const rightBtn = document.querySelector("#rightBtn");
@@ -38,18 +37,17 @@ leftBtn.addEventListener("click", () => handleTouchControl("left"));
 rightBtn.addEventListener("click", () => handleTouchControl("right"));
 downBtn.addEventListener("click", () => handleTouchControl("down"));
 
-// Add swipe detection
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndX = 0;
 let touchEndY = 0;
 
-gameBoard.addEventListener("touchstart", function(event) {
+gameBoard.addEventListener("touchstart", function (event) {
     touchStartX = event.changedTouches[0].screenX;
     touchStartY = event.changedTouches[0].screenY;
 }, false);
 
-gameBoard.addEventListener("touchend", function(event) {
+gameBoard.addEventListener("touchend", function (event) {
     touchEndX = event.changedTouches[0].screenX;
     touchEndY = event.changedTouches[0].screenY;
     handleSwipe();
@@ -58,17 +56,15 @@ gameBoard.addEventListener("touchend", function(event) {
 function handleSwipe() {
     const horizontalDistance = touchEndX - touchStartX;
     const verticalDistance = touchEndY - touchStartY;
-    
-    // Determine if the swipe was primarily horizontal or vertical
+
     if (Math.abs(horizontalDistance) > Math.abs(verticalDistance)) {
-        // Horizontal swipe
         if (horizontalDistance > 30) {
             handleTouchControl("right");
         } else if (horizontalDistance < -30) {
             handleTouchControl("left");
         }
     } else {
-        // Vertical swipe
+
         if (verticalDistance > 30) {
             handleTouchControl("down");
         } else if (verticalDistance < -30) {
@@ -114,54 +110,46 @@ function handleTouchControl(direction) {
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
 
-// Check if device is mobile/tablet
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 }
 
-// Show difficulty selection instead of starting game immediately
 showDifficultySelection();
 
 function showDifficultySelection() {
-    // Hide game elements
     gameBoard.style.display = "none";
     scoreText.style.display = "none";
     resetBtn.style.display = "none";
     controlsContainer.style.display = "none";
 
-    // Show difficulty selection
     difficultyContainer.style.display = "flex";
 }
 
 function setDifficulty(level) {
     switch (level) {
         case "easy":
-            gameSpeed = 100; // Slower
+            gameSpeed = 100;
             break;
         case "medium":
-            gameSpeed = 75; // Default speed
+            gameSpeed = 75;
             break;
         case "hard":
-            gameSpeed = 50; // Faster
+            gameSpeed = 50;
             break;
     }
 
-    // Hide difficulty selection
     difficultyContainer.style.display = "none";
 
-    // Show game elements
     gameBoard.style.display = "block";
     scoreText.style.display = "block";
     resetBtn.style.display = "inline-block";
-    
-    // Show touch controls only on mobile/tablet devices
+
     if (isMobileDevice()) {
         controlsContainer.style.display = "grid";
     } else {
         controlsContainer.style.display = "none";
     }
 
-    // Start the game
     gameStart();
 }
 
