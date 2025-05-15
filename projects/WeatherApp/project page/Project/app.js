@@ -6,14 +6,28 @@ const searchBtn = document.querySelector('.search button');
 const weatherIcon = document.querySelector('.weatherIcon');
 
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-
-    let data = await response.json();
-
-    if (response.status == 404) {
-        document.querySelector('.error').style.display = 'block';
+    try {
         document.querySelector('.weather').style.display = 'none';
-    } else {
+        document.querySelector('.error').style.display = 'none';
+
+        // Add loading state
+        searchBtn.disabled = true;
+        searchBtn.innerHTML = '<div class="loading"></div>';
+
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        const data = await response.json();
+
+        // Reset button
+        searchBtn.disabled = false;
+        searchBtn.innerHTML = '<img src="images/search.png" alt="Search">';
+
+        if (response.status == 404) {
+            document.querySelector('.error').style.display = 'block';
+            document.querySelector('.weather').style.display = 'none';
+            return;
+        }
+
+        // Update weather icon based on condition
         if (data.weather[0].main == 'Clouds') {
             weatherIcon.src = 'images/clouds.png';
         } else if (data.weather[0].main == 'Clear') {
@@ -24,26 +38,44 @@ async function checkWeather(city) {
             weatherIcon.src = 'images/drizzle.png';
         } else if (data.weather[0].main == 'Mist') {
             weatherIcon.src = 'images/mist.png';
+        } else {
+            weatherIcon.src = 'images/clear.png'; // Default icon
         }
+
+        // Update UI with weather data
+        document.querySelector('.city').innerHTML = data.name;
+        document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c';
+        document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
+        document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
 
         document.querySelector('.weather').style.display = 'block';
         document.querySelector('.error').style.display = 'none';
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.querySelector('.error').style.display = 'block';
+        document.querySelector('.weather').style.display = 'none';
+
+        // Reset button on error
+        searchBtn.disabled = false;
+        searchBtn.innerHTML = '<img src="images/search.png" alt="Search">';
     }
-
-
-
-
-
-    document.querySelector('.city').innerHTML = data.name;
-    document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '°c';
-    document.querySelector('.humidity').innerHTML = data.main.humidity + '%';
-    document.querySelector('.wind').innerHTML = data.wind.speed + ' km/h';
-
-
-
 }
 
+// Event listener for search button click
 searchBtn.addEventListener('click', () => {
-    checkWeather(searchBox.value);
-})
+    const city = searchBox.value.trim();
+    if (city) {
+        checkWeather(city);
+    }
+});
+
+// Event listener for Enter key press
+searchBox.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const city = searchBox.value.trim();
+        if (city) {
+            checkWeather(city);
+        }
+    }
+});
 
