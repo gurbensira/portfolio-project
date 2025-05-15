@@ -39,6 +39,59 @@ body {
     cursor: pointer;
 }
 
+/* Mobile Controls Styling */
+#controlsContainer {
+    display: none;
+    /* Hidden by default, shown only on mobile/tablet */
+    grid-template-areas:
+        ". up ."
+        "left . right"
+        ". down .";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto 0;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight on mobile */
+    justify-self: center;
+}
+
+#upBtn {
+    grid-area: up;
+}
+
+#leftBtn {
+    grid-area: left;
+}
+
+#rightBtn {
+    grid-area: right;
+}
+
+#downBtn {
+    grid-area: down;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Difficulty Selection Styling */
 #difficultyContainer {
     display: flex;
@@ -124,6 +177,13 @@ body {
     .difficulty-buttons button {
         font-size: 1.3rem;
     }
+
+    /* Make control buttons larger on small screens */
+    .control-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
 }
 
 /* Media query for very small devices */
@@ -144,5 +204,16 @@ body {
 
     #difficultyContainer h2 {
         font-size: 1.2rem;
+    }
+
+    /* Adjust control buttons for very small screens */
+    #controlsContainer {
+        gap: 8px;
+    }
+
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
     }
 }

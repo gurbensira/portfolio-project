@@ -4,6 +4,7 @@ const scoreText = document.querySelector("#scoreText");
 const resetBtn = document.querySelector("#resetBtn");
 const difficultyContainer = document.querySelector("#difficultyContainer");
 const gameContainer = document.querySelector("#gameContainer");
+const controlsContainer = document.querySelector("#controlsContainer");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
 const boardBackground = "white";
@@ -26,8 +27,97 @@ let snake = [
     { x: 0, y: 0 }
 ];
 
+// Add touch controls event listeners
+const upBtn = document.querySelector("#upBtn");
+const leftBtn = document.querySelector("#leftBtn");
+const rightBtn = document.querySelector("#rightBtn");
+const downBtn = document.querySelector("#downBtn");
+
+upBtn.addEventListener("click", () => handleTouchControl("up"));
+leftBtn.addEventListener("click", () => handleTouchControl("left"));
+rightBtn.addEventListener("click", () => handleTouchControl("right"));
+downBtn.addEventListener("click", () => handleTouchControl("down"));
+
+// Add swipe detection
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+gameBoard.addEventListener("touchstart", function(event) {
+    touchStartX = event.changedTouches[0].screenX;
+    touchStartY = event.changedTouches[0].screenY;
+}, false);
+
+gameBoard.addEventListener("touchend", function(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    touchEndY = event.changedTouches[0].screenY;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    const horizontalDistance = touchEndX - touchStartX;
+    const verticalDistance = touchEndY - touchStartY;
+    
+    // Determine if the swipe was primarily horizontal or vertical
+    if (Math.abs(horizontalDistance) > Math.abs(verticalDistance)) {
+        // Horizontal swipe
+        if (horizontalDistance > 30) {
+            handleTouchControl("right");
+        } else if (horizontalDistance < -30) {
+            handleTouchControl("left");
+        }
+    } else {
+        // Vertical swipe
+        if (verticalDistance > 30) {
+            handleTouchControl("down");
+        } else if (verticalDistance < -30) {
+            handleTouchControl("up");
+        }
+    }
+}
+
+function handleTouchControl(direction) {
+    const goingUp = (yVelocety == -unitSize);
+    const goingDown = (yVelocety == unitSize);
+    const goingRight = (xVelocety == unitSize);
+    const goingLeft = (xVelocety == -unitSize);
+
+    switch (direction) {
+        case "left":
+            if (!goingRight) {
+                xVelocety = -unitSize;
+                yVelocety = 0;
+            }
+            break;
+        case "up":
+            if (!goingDown) {
+                xVelocety = 0;
+                yVelocety = -unitSize;
+            }
+            break;
+        case "right":
+            if (!goingLeft) {
+                xVelocety = unitSize;
+                yVelocety = 0;
+            }
+            break;
+        case "down":
+            if (!goingUp) {
+                xVelocety = 0;
+                yVelocety = unitSize;
+            }
+            break;
+    }
+}
+
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
+
+// Check if device is mobile/tablet
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+}
 
 // Show difficulty selection instead of starting game immediately
 showDifficultySelection();
@@ -37,6 +127,7 @@ function showDifficultySelection() {
     gameBoard.style.display = "none";
     scoreText.style.display = "none";
     resetBtn.style.display = "none";
+    controlsContainer.style.display = "none";
 
     // Show difficulty selection
     difficultyContainer.style.display = "flex";
@@ -62,6 +153,13 @@ function setDifficulty(level) {
     gameBoard.style.display = "block";
     scoreText.style.display = "block";
     resetBtn.style.display = "inline-block";
+    
+    // Show touch controls only on mobile/tablet devices
+    if (isMobileDevice()) {
+        controlsContainer.style.display = "grid";
+    } else {
+        controlsContainer.style.display = "none";
+    }
 
     // Start the game
     gameStart();
