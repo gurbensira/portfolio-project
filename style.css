@@ -272,6 +272,14 @@ input[type="checkbox"] {
         background-color: lightskyblue;
         transition: 0.5s;
     }
+
+    .jsDiv {
+        width: 100%;
+
+        h2 {
+            text-align: center;
+        }
+    }
 }
 
 #contact {

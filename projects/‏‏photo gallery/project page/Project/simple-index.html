@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Gallery with Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="simple-style.css">
+</head>
+
+<body>
+    <!-- Login/Register Page -->
+    <div id="loginPage">
+        <div class="auth-container">
+            <h1>Image Gallery</h1>
+
+            <!-- Login Form -->
+            <div id="loginForm">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <button class="link-button" onclick="showRegisterForm()">Register
+                        here</button></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm">
+                <h2>Register</h2>
+                <div class="form-group">
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" placeholder="Choose username">
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" placeholder="Choose password">
+                </div>
+                <button onclick="register()">Register</button>
+                <p>Already have an account? <button class="link-button" onclick="showLoginForm()">Login here</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="galleryPage">
+        <!-- Header with welcome message and logout button -->
+        <div class="header">
+            <h2 id="welcomeMessage">Welcome!</h2>
+            <button onclick="logout()" class="logout-button">Logout</button>
+        </div>
+
+        <!-- Image Gallery (Your existing gallery) -->
+        <div class="fullImg" id="fullImgBox">
+            <img src="images/img1.jpg" alt="" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+        <div class="imageGallery">
+            <img src="images/img1.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img2.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img3.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img4.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img5.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img6.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img7.jpg" alt="" onclick="openFullImg(this.src)">
+            <img src="images/img8.jpg" alt="" onclick="openFullImg(this.src)">
+        </div>
+    </div>
+
+    <!-- Include your original JS -->
+    <script src="app.js"></script>
+    <!-- Include the authentication JS -->
+    <script src="auth.js"></script>
+</body>
+
+</html>
